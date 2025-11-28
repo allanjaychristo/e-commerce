@@ -2,6 +2,7 @@
 import { useAuth } from "../context/AuthContext";
 
 const Header = () => {
+  const { user, logout, loginWithGoogle } = useAuth(); // <-- Faltava ISSO
 
   return (
     <header className="header">
