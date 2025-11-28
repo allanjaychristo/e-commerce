@@ -4,19 +4,18 @@ import { getAuth, GoogleAuthProvider, OAuthProvider } from "firebase/auth";
 
 // 🔴 Cole aqui o firebaseConfig do seu projeto
 const firebaseConfig = {
-  apiKey: "AIzaSyBwz41c2X-RvuIhigM05KdhMXlNLMjJ4QY",
-  authDomain: "karen-site-9e8f0.firebaseapp.com",
-  projectId: "karen-site-9e8f0",
-  storageBucket: "karen-site-9e8f0.firebasestorage.app",
-  messagingSenderId: "199721152796",
-  appId: "1:199721152796:web:5160c136edb7fe4a500ad9"
+  apiKey: "AIzaSyDha_f408KTyGSLBDXSgpyT4tn2Pj-yQrk",
+  authDomain: "ecommerce-e28b8.firebaseapp.com",
+  projectId: "ecommerce-e28b8",
+  storageBucket: "ecommerce-e28b8.firebasestorage.app",
+  messagingSenderId: "827236511508",
+  appId: "1:827236511508:web:88c8eab52c779de8061c01"
 };
 
 const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
-export const microsoftProvider = new OAuthProvider("microsoft.com");
 
 // (Opcional) escopos extras para Microsoft, ex:
 // microsoftProvider.addScope("User.Read");
