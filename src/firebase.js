@@ -16,6 +16,3 @@ const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
-
-// (Opcional) escopos extras para Microsoft, ex:
-// microsoftProvider.addScope("User.Read");

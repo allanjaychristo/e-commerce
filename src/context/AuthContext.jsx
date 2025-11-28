@@ -3,7 +3,6 @@ import { createContext, useContext, useEffect, useState } from "react";
 import {
   auth,
   googleProvider,
-  microsoftProvider,
 } from "../firebase";
 import {
   signInWithPopup,
@@ -12,7 +11,6 @@ import {
 } from "firebase/auth";
 
 const AuthContext = createContext(null);
-
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -27,21 +25,21 @@ export const AuthProvider = ({ children }) => {
     return () => unsubscribe();
   }, []);
 
-const loginWithGoogle = async () => {
-  try {
-    const result = await signInWithPopup(auth, googleProvider);
-    console.log("Google user:", result.user);
-  } catch (error) {
-    console.error("Erro login Google:", error);
-    alert("Erro ao entrar com Google: " + error.code);
-  }
-};
-  const loginWithMicrosoft = () => signInWithPopup(auth, microsoftProvider);
+  const loginWithGoogle = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      console.log("Google user:", result.user);
+    } catch (error) {
+      console.error("Erro login Google:", error);
+      alert("Erro ao entrar com Google: " + error.code);
+    }
+  };
+
   const logout = () => signOut(auth);
 
   return (
     <AuthContext.Provider
-      value={{ user, loading, loginWithGoogle, loginWithMicrosoft, logout }}
+      value={{ user, loading, loginWithGoogle, logout }}
     >
       {!loading && children}
     </AuthContext.Provider>

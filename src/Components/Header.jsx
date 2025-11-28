@@ -2,7 +2,6 @@
 import { useAuth } from "../context/AuthContext";
 
 const Header = () => {
-  const { user, loginWithGoogle, loginWithMicrosoft, logout } = useAuth();
 
   return (
     <header className="header">
@@ -21,12 +20,6 @@ const Header = () => {
           <>
             <button onClick={loginWithGoogle}>
               Entrar com Google
-            </button>
-            <button
-              onClick={loginWithMicrosoft}
-              style={{ marginLeft: "0.5rem" }}
-            >
-              Entrar com Microsoft
             </button>
           </>
         )}
