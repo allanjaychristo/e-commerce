@@ -1,22 +1,15 @@
-const services = [
-  { title: 'Desenvolvimento Web', desc: 'Criação de sites com HTML, CSS e JavaScript.' },
-  { title: 'UI/UX Design', desc: 'Design centrado no usuário e prototipação.' },
-  { title: 'Otimização e SEO', desc: 'Performance e posicionamento em buscadores.' },
-];
+import React from "react";
 
-function Services() {
+export default function Services() {
   return (
-    <section id="serviços">
-      <h2>O que faço</h2>
-      <div className="services">
-        {services.map((s, i) => (
-          <div className="service" key={i}>
-            <h3>{s.title}</h3>
-            <p>{s.desc}</p>
-          </div>
-        ))}
+    <section className="services">
+      <h2>Categorias</h2>
+
+      <div className="services-grid">
+        <div className="service-card">🎵 Vinis de MPB</div>
+        <div className="service-card">👕 Camisas</div>
+        <div className="service-card">⭐ Acessórios</div>
       </div>
     </section>
   );
 }
-export default Services;

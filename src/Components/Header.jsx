@@ -1,28 +1,34 @@
 // src/Components/Header.jsx
+import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { useCart } from "../context/CartContext";
 
 const Header = () => {
-  const { user, logout, loginWithGoogle } = useAuth(); // <-- Faltava ISSO
+  const { user, logout, loginWithGoogle } = useAuth();
+  const { cart } = useCart();
 
   return (
     <header className="header">
-      <h1>Prof Karen Carvalho</h1>
-      <p>Experiências de aprendizagem & desenvolvimento web</p>
+      <h1>MPB Store</h1>
 
-      <div style={{ marginLeft: "auto" }}>
+      <Link to="/carrinho">
+        🛒 Carrinho ({cart.length})
+      </Link>
+
+      <div>
         {user ? (
           <>
-            <span style={{ marginRight: "1rem" }}>
+            <span>
               Olá, {user.displayName || user.email}
             </span>
-            <button onClick={logout}>Sair</button>
-          </>
-        ) : (
-          <>
-            <button onClick={loginWithGoogle}>
-              Entrar com Google
+            <button onClick={logout}>
+              Sair
             </button>
           </>
+        ) : (
+          <button onClick={loginWithGoogle}>
+            Entrar com Google
+          </button>
         )}
       </div>
     </header>

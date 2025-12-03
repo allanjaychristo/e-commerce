@@ -1,9 +1,11 @@
-function Hero() {
+import React from "react";
+
+export default function Hero() {
   return (
     <section className="hero">
-      <h2>Crio soluções digitais que transformam ideias em realidade</h2>
-      <p>Especialista em HTML, CSS e JavaScript. Projetos modernos, responsivos e com performance de ponta.</p>
+      <h2>Vinil de MPB • Clássicos e Edições Raras</h2>
+      <p>Chico, Elis, Gil, Caetano, Djavan e muito mais.</p>
+      <button>Ver Produtos</button>
     </section>
   );
 }
-export default Hero;

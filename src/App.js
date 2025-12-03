@@ -1,28 +1,38 @@
+// src/App.js
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import React from 'react';
 import './styles.css';
+
 import Header from './Components/Header';
 import Navigation from './Components/Navigation';
-import Hero from './Components/Hero';
-import About from './Components/About';
-import Services from './Components/Services';
-import Stats from './Components/Stats';
-import Contact from './Components/Contact';
+
+import Home from './Components/HomePage'; // exemplo
+import Produtos from './Components/ProductsPage'; // exemplo
+import Sobre from './Components/About';
+import Contato from './Components/Contact';
+
 import Footer from './Components/Footer';
+
+import { CartProvider } from "./context/CartContext";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      
-      <Navigation />
-   
-      <Hero />
-      <About />
-      <Services />
-      <Stats />
-      <Contact />
-      <Footer />
-    </div>
+    <CartProvider>
+      <Router>
+        <Header />
+        <Navigation />
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/produtos" element={<Produtos />} />
+          <Route path="/sobre" element={<Sobre />} />
+          <Route path="/contato" element={<Contato />} />
+        </Routes>
+
+        <Footer />
+      </Router>
+    </CartProvider>
   );
 }
 

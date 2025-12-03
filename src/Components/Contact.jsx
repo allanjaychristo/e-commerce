@@ -1,9 +1,11 @@
-function Contact() {
+import React from "react";
+
+export default function Contact() {
   return (
-    <section id="contato">
+    <section className="contact">
       <h2>Contato</h2>
-      <p>Envie um e-mail para <a href="mailto:seuemail@dominio.com">seuemail@dominio.com</a></p>
+      <p>Email: mpbstore@gmail.com</p>
+      <p>WhatsApp: (48) 99999-9999</p>
     </section>
   );
 }
-export default Contact;

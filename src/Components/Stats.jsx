@@ -1,22 +1,26 @@
-const stats = [
-  { label: 'Projetos entregues', value: '+50' },
-  { label: 'Clientes satisfeitos', value: '+20' },
-  { label: 'Anos de experiência', value: '+5' },
-];
+import React from "react";
 
-function Stats() {
+export default function Stats() {
   return (
-    <section id="resultados">
-      <h2>Resultados em números</h2>
-      <div className="stats">
-        {stats.map((s, i) => (
-          <div className="stat" key={i}>
-            <h3>{s.value}</h3>
-            <p>{s.label}</p>
-          </div>
-        ))}
+    <section className="stats">
+      <h2>Nossas Conquistas</h2>
+
+      <div className="stats-grid">
+        <div>
+          <h3>300+</h3>
+          <p>Vinis vendidos</p>
+        </div>
+
+        <div>
+          <h3>50+</h3>
+          <p>Artistas disponíveis</p>
+        </div>
+
+        <div>
+          <h3>4.8⭐</h3>
+          <p>Avaliação dos clientes</p>
+        </div>
       </div>
     </section>
   );
 }
-export default Stats;
