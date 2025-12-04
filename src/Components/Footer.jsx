@@ -1,9 +1,13 @@
-import React from "react";
+import { Container } from "react-bootstrap";
 
-export default function Footer() {
+const Footer = () => {
   return (
-    <footer className="footer">
-      <p>© 2025 MPB Vinil Store — Todos os direitos reservados.</p>
+    <footer className="bg-dark text-light py-3 fixed-bottom">
+      <Container className="text-center">
+        <p className="mb-0">© 2025 MPB Store — Todos os direitos reservados</p>
+      </Container>
     </footer>
   );
-}
+};
+
+export default Footer;

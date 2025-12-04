@@ -2,36 +2,42 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useCart } from "../context/CartContext";
+import { Navbar, Container, Button, Badge } from "react-bootstrap";
 
 const Header = () => {
   const { user, logout, loginWithGoogle } = useAuth();
   const { cart } = useCart();
 
   return (
-    <header className="header">
-      <h1>MPB Store</h1>
+    <Navbar bg="dark" variant="dark">
+      <Container className="d-flex justify-content-between">
+        <Navbar.Brand as={Link} to="/">
+          MPB Store
+        </Navbar.Brand>
 
-      <Link to="/carrinho">
-        🛒 Carrinho ({cart.length})
-      </Link>
+        <div className="d-flex align-items-center gap-2">
+          <Button as={Link} to="/carrinho" variant="outline-light">
+            Carrinho <Badge bg="danger">{cart.length}</Badge>
+          </Button>
 
-      <div>
-        {user ? (
-          <>
-            <span>
-              Olá, {user.displayName || user.email}
-            </span>
-            <button onClick={logout}>
-              Sair
-            </button>
-          </>
-        ) : (
-          <button onClick={loginWithGoogle}>
-            Entrar com Google
-          </button>
-        )}
-      </div>
-    </header>
+          {user ? (
+            <>
+              <span className="text-light">
+                Olá, {user.displayName || user.email}
+              </span>
+
+              <Button variant="danger" onClick={logout}>
+                Sair
+              </Button>
+            </>
+          ) : (
+            <Button variant="success" onClick={loginWithGoogle}>
+              Entrar com Google
+            </Button>
+          )}
+        </div>
+      </Container>
+    </Navbar>
   );
 };
 
