@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useCart } from "../context/CartContext";
 import { Navbar, Container, Button, Badge, Nav } from "react-bootstrap";
+import "../styles.css";
+
 
 const Header = () => {
   const { user, logout, loginWithGoogle } = useAuth();

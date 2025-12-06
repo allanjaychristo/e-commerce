@@ -1,10 +1,11 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
+import "../styles.css";
+
 
 export default function About() {
   return (
     <Container className="mt-5">
 
-      {/* TÍTULO */}
       <Row className="mb-4 text-center">
         <Col>
           <h2>🎵 Sobre a MPB Vinil Store</h2>
@@ -14,10 +15,8 @@ export default function About() {
         </Col>
       </Row>
 
-      {/* CONTEÚDO */}
       <Row className="align-items-center g-4">
 
-        {/* TEXTO */}
         <Col md={6}>
           <Card className="shadow-sm p-3 h-100">
             <Card.Body>
@@ -38,7 +37,6 @@ export default function About() {
           </Card>
         </Col>
 
-        {/* DESTAQUES */}
         <Col md={6}>
           <Row className="g-3">
 

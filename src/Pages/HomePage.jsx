@@ -1,6 +1,8 @@
 import { Container, Button, Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Carousel from "react-bootstrap/Carousel";
+import "../styles.css";
+
 
 export default function HomePage() {
 

@@ -1,6 +1,8 @@
 import { Container, Button, ListGroup, Row, Col, Card } from "react-bootstrap";
 import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
+import "../styles.css";
+
 
 export default function Carrinho() {
   const { cart, removeFromCart } = useCart();

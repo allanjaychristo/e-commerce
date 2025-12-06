@@ -1,4 +1,6 @@
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
+import "../styles.css";
+
 
 export default function Contact() {
   return (
